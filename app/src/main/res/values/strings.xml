@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">PizzaOrder</string>
     <string name="small_pizza">Small Pizza</string>
+    <string-array name = "toppings">
+        <item>Cheese</item>
+        <item>Pepperoni</item>
+        <item>Sausage</item>
+        <item>Hawaiian</item>
+    </string-array>
 </resources>

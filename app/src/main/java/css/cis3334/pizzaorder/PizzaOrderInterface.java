@@ -3,7 +3,7 @@ package css.cis3334.pizzaorder;
 /**
  * Created by tgibbons on 2/10/2017.
  */
-public interface PizzaOrderInterface {
+public interface  PizzaOrderInterface {
     String OrderPizza(String topping, String strSize, boolean extraCheese);
     Double getTotalBill();
     Double getSmallPrice();
