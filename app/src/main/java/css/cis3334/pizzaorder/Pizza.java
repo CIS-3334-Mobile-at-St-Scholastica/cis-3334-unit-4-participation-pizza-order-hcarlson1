@@ -4,7 +4,7 @@ package css.cis3334.pizzaorder;
  * Created by tgibbons on 2/10/2017.
  */
 public class Pizza {
-    public enum pizzaSize { SMALL, MEDIUM, LARGE};
+    public enum pizzaSize {  SMALL, MEDIUM, LARGE};
     public static final Double SMALL_PRICE = 7.00;
     public static final Double MEDIUM_PRICE = 9.00;
     public static final Double LARGE_PRICE = 11.00;
@@ -30,6 +30,7 @@ public class Pizza {
             price = LARGE_PRICE;
             description = "Large " + topping + " pizza";
         }
+
         if (extraCheese) {
             price += EXTRA_CHEESE_PRICE;;
             description += " with extra cheese";

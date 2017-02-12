@@ -47,129 +47,136 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     }
 
     public void onClickOrder(View view) {
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Large", false);
-        Double totalPrice = 0.0;
+        String orderDescription;
         String topping = spinToppings.getSelectedItem().toString();
+        String size;
+        String toppingName;
+        boolean xCheese = false;
+
+        if (chkbxDelivery.isChecked()){pizzaOrderSystem.setDelivery(true); }
 
         if (topping.equalsIgnoreCase("Cheese")) {
             if (rbSmall.isChecked())
             {
-                orderDescription = pizzaOrderSystem.OrderPizza("Cheese","Small", false);
-                totalPrice = pizzaOrderSystem.getSmallPrice();
+                size = "small";
+                toppingName = "cheese";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Cheese","Small", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else if (rbMedium.isChecked()){
-                orderDescription = pizzaOrderSystem.OrderPizza("Cheese","Medium", false);
-                totalPrice = pizzaOrderSystem.getMediumPrice();
+                size = "medium";
+                toppingName = "cheese";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Cheese","Medium", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else {
-                orderDescription = pizzaOrderSystem.OrderPizza("Cheese", "Large", false);
-                totalPrice = pizzaOrderSystem.getLargePrize();
-                if (chkbxCheese.isChecked()) {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Cheese", "Large", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                size = "Large";
+                toppingName = "cheese";
+                if (chkbxCheese.isChecked())
+                {
+                    xCheese = true;
                 }
             }
         } else if (topping.equalsIgnoreCase("Pepperoni")) {
             if (rbSmall.isChecked())
             {
-                orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Small", false);
-                totalPrice = pizzaOrderSystem.getSmallPrice();
+                size = "small";
+                toppingName = "Pepperoni";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Small", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else if (rbMedium.isChecked()){
-                orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Medium", false);
-                totalPrice = pizzaOrderSystem.getMediumPrice();
+                size = "medium";
+                toppingName = "Pepperoni";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Medium", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else {
-                orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni", "Large", false);
-                totalPrice = pizzaOrderSystem.getLargePrize();
-                if (chkbxCheese.isChecked()) {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni", "Large", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                size = "Large";
+                toppingName = "Pepperoni";
+                if (chkbxCheese.isChecked())
+                {
+                    xCheese = true;
                 }
             }
 
         } else if (topping.equalsIgnoreCase("Sausage")) {
             if (rbSmall.isChecked())
             {
-                orderDescription = pizzaOrderSystem.OrderPizza("Sausage","Small", false);
-                totalPrice = pizzaOrderSystem.getSmallPrice();
+                size = "small";
+                toppingName = "Sausage";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Sausage","Small", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else if (rbMedium.isChecked()){
-                orderDescription = pizzaOrderSystem.OrderPizza("Sausage","Medium", false);
-                totalPrice = pizzaOrderSystem.getMediumPrice();
+                size = "medium";
+                toppingName = "Sausage";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Sausage","Medium", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else {
-                orderDescription = pizzaOrderSystem.OrderPizza("Sausage", "Large", false);
-                totalPrice = pizzaOrderSystem.getLargePrize();
-                if (chkbxCheese.isChecked()) {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Sausage", "Large", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                size = "Large";
+                toppingName = "Sausage";
+                if (chkbxCheese.isChecked())
+                {
+                    xCheese = true;
                 }
             }
         } else {
             if (rbSmall.isChecked())
             {
-                orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian","Small", false);
-                totalPrice = pizzaOrderSystem.getSmallPrice();
+                size = "small";
+                toppingName = "Hawaiian";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian","Small", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else if (rbMedium.isChecked()){
-                orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian","Medium", false);
-                totalPrice = pizzaOrderSystem.getMediumPrice();
+                size = "medium";
+                toppingName = "Hawaiian";
                 if(chkbxCheese.isChecked())
                 {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian","Medium", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
 
             } else {
-                orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian", "Large", false);
-                totalPrice = pizzaOrderSystem.getLargePrize();
+                size = "Large";
+                toppingName = "Hawaiian";
                 if (chkbxCheese.isChecked()) {
-                    orderDescription = pizzaOrderSystem.OrderPizza("Hawaiian", "Large", true);
-                    totalPrice = totalPrice + pizzaOrderSystem.getExtraCheesePrice();
+                    xCheese = true;
                 }
             }
-
-
         }
+
+        orderDescription = pizzaOrderSystem.OrderPizza(toppingName,size,xCheese);
 
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
+    }
+    public void onClickNewOrder(View view) {
+        pizzaOrderSystem.setNewOrder(true);
+        rbSmall.setChecked(false);
+        rbMedium.setChecked(false);
+        rbLarge.setChecked(false);
+        chkbxCheese.setChecked(false);
+        chkbxDelivery.setChecked(false);
+
+        Toast.makeText(getApplicationContext(), "Ready for a new order", Toast.LENGTH_LONG).show();
+        txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
+
     }
 }

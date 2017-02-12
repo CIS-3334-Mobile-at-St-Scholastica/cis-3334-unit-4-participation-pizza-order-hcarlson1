@@ -12,5 +12,7 @@ public interface  PizzaOrderInterface {
     Double getExtraCheesePrice();
     void setDelivery(boolean deliver);
     boolean getDelivery();
+    void setNewOrder(boolean newOrderBool);
+    boolean getNewOrder();
 
 }

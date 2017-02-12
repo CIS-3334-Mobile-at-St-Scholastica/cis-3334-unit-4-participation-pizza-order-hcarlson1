@@ -59,7 +59,7 @@
         android:onClick="onClickOrder" />
 
     <CheckBox
-        android:text="CheckBoxDelivery"
+        android:text="Delivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkBoxDeluvery" />
@@ -75,6 +75,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewStatus" />
+
+    <Button
+        android:text="New Order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonNewOrder"
+        android:onClick="onClickNewOrder" />
 
 
 </LinearLayout>
